@@ -35,7 +35,7 @@ Type: Success
 2c:
 Request: http://localhost/lw1/php_is_a_server_scripting_language.php
 Code: 302 Found
-Type: Rediction
+Type: Redirection
 Значение: ресурс отсутствует временно(ресурс временно находится под другим URL), описание специального поведения сервера
 
 2d:
