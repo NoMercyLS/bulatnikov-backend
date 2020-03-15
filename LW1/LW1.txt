@@ -44,7 +44,7 @@ Type: Redirection
 Request: http://localhost/lw1/javascript_is_a_client_side_language.php?how_to_work=hardly
 Code: 400 Work hard!
 Type: Client Error
-Значение: плохой запрос от клиента. Сервер обнаружил в запросе клиента синтаксическую ошибку.
+Значение: плохой запрос от клиента.
 Решение: другой Request = http://localhost/lw1/javascript_is_a_client_side_language.php?how_to_work=hard
 
 
