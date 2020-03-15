@@ -37,6 +37,8 @@ Request: http://localhost/lw1/php_is_a_server_scripting_language.php
 Code: 302 Found
 Type: Redirection
 «начение: ресурс отсутствует временно(ресурс временно находитс€ под другим URL), описание специального поведени€ сервера
+Ќовый адрес находитс€ в заголовке Location.
+ќтличаетс€ от 301 Moved Permanently тем, что ресурс перемещЄн на посто€нной основе, в отличии от временного изменени€ ресурса в 302 Found.
 
 2d:
 Request: http://localhost/lw1/javascript_is_a_client_side_language.php?how_to_work=hardly
@@ -44,7 +46,6 @@ Code: 400 Work hard!
 Type: Client Error
 «начение: плохой запрос от клиента. —ервер обнаружил в запросе клиента синтаксическую ошибку.
 –ешение: другой Request = http://localhost/lw1/javascript_is_a_client_side_language.php?how_to_work=hard
-
 
 
 _________________________________________________________________________________________________________
