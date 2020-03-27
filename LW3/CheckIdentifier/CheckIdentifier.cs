@@ -15,7 +15,7 @@ namespace CheckIdentifier
         {
             if (args.Length < 1 || args.Length > 1)
             {
-                return null;
+                throw new Exception(InvalidNumberOfArgumentsMessage);
             }
 
             return args[0];
@@ -50,10 +50,6 @@ namespace CheckIdentifier
         public static void Main(string[] args)
         {
             string identifier = GetIdentifier(args);
-            if (identifier == null)
-            {
-                throw new Exception(InvalidNumberOfArgumentsMessage);
-            }
 
             string message = CheckingStringForCompilanceSR3(identifier);
             if (message == YesMessage)

@@ -19,8 +19,9 @@ namespace CheckIdentifierTests
                 StringAssert.Equals(e.Message, CheckIdentifier.CheckIdentifier.InvalidNumberOfArgumentsMessage);
                 return;
             }
+            Assert.Fail("The expected exception was not thrown.");
         }
-
+        [TestMethod]
         public void GetIdentifier_WithoutArgs_ShouldThrowException()
         {
             string[] arguments = new string[] { };
@@ -33,20 +34,21 @@ namespace CheckIdentifierTests
                 StringAssert.Equals(e.Message, CheckIdentifier.CheckIdentifier.InvalidNumberOfArgumentsMessage);
                 return;
             }
+            Assert.Fail("The expected exception was not thrown.");
         }
-
+        [TestMethod]
         public void CheckingStringForCompilanceSR3_EmptyString_ShouldReturnEmptyStringMessage()
         {
             string identifier = "";
             StringAssert.Equals(CheckIdentifier.CheckIdentifier.CheckingStringForCompilanceSR3(identifier), CheckIdentifier.CheckIdentifier.EmptyStringMessage);
         }
-
+        [TestMethod]
         public void CheckingStringForCompilanceSR3_StringStartsWithDigit_ShouldReturnDigitAtTheBeginningMessage()
         {
             string identifier = "32rrr";
             StringAssert.Equals(CheckIdentifier.CheckIdentifier.CheckingStringForCompilanceSR3(identifier), CheckIdentifier.CheckIdentifier.DigitAtTheBeginningMessage);
         }
-
+        [TestMethod]
         public void CheckingStringForCompilanceSR3_StringContainsNotADigitNotALetterSymbol_ShouldReturnNotADigitNotALetterMessage()
         {
             string identifier = "32rr_r";
