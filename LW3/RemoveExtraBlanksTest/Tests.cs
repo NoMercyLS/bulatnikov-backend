@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RemoveExtraBlanks;
+using System.Text;
+
 namespace RemoveExtraBlanksTest
 {
     [TestClass]
@@ -60,6 +62,21 @@ namespace RemoveExtraBlanksTest
             Assert.Fail("The expected exception was not thrown.");
         }
         [TestMethod]
+        public void CheckFileExistance_WithNullArgument_ShouldThrowException()
+        {
+            string filePath = null;
+            try
+            {
+                RemoveExtraBlanks.RemoveExtraBlanks.CheckFileExistance(filePath);
+            }
+            catch (System.Exception e)
+            {
+                StringAssert.Equals(e.Message, RemoveExtraBlanks.RemoveExtraBlanks.NullArgumentMessage);
+                return;
+            }
+            Assert.Fail("The expected exception was not thrown.");
+        }
+        [TestMethod]
         public void CheckFileExistance_WithExistentFile_ShouldGoNext()
         {
             string filePath = "testInput.txt";
@@ -69,28 +86,69 @@ namespace RemoveExtraBlanksTest
             Assert.IsTrue(isPassed, "File checked incorrectly.");
         }
         [TestMethod]
+        public void GetStringWithoutExtremeBlanks_WithNullArgument_ShouldThrowException()
+        {
+            string text = null;
+            string actual;
+            try
+            {
+                actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtremeBlanks(text);
+            }
+            catch (System.Exception e)
+            {
+                StringAssert.Equals(e.Message, RemoveExtraBlanks.RemoveExtraBlanks.NullArgumentMessage);
+                return;
+            }
+            Assert.Fail("The expected exception was not thrown.");
+        }
+        [TestMethod]
         public void GetStringWithoutExtremeBlanks_ShouldGoNext()
         {
             string text = "\t\t GOGOGO \t \t";
             string actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtremeBlanks(text);
             string expected = "GOGOGO";
+            Assert.AreEqual(expected, actual, "Extreme blanks removed incorrectly");
+        }
+        [TestMethod]
+        public void GetStringWithoutExtraBlanks_WithNullArgument_ShouldThrowException()
+        {
+            string text = null;
+            string actual;
+            try
+            {
+                actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtraBlanks(text);
+            }
+            catch (System.Exception e)
+            {
+                StringAssert.Equals(e.Message, RemoveExtraBlanks.RemoveExtraBlanks.NullArgumentMessage);
+                return;
+            }
+            Assert.Fail("The expected exception was not thrown.");
+        }
+        [TestMethod]
+        public void GetStringWithoutExtraBlanks_ShouldGoNext()
+        {
+            string text = "Hello\t\t\t\t       world   \t\t\t! How    are     u            \t\t\t\t guys\t\t\t\t\t?";
+            string expected = "Hello world ! How are u guys ?";
+            string actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtraBlanks(text);
+
             Assert.AreEqual(expected, actual, "Blanks removed incorrectly");
         }
         [TestMethod]
-        public void GetStringWithoutExtraSpaces_ShouldGoNext()
+        public void ReadText_ShouldGoNext()
         {
-            string line = "hello  world!      how    are                    u?";
-            string expected = "hello world! how are u?";
-            string actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtraSpaces(line);
-            Assert.AreEqual(expected, actual, "Spaces removed incorrectly");
+            string expected = "Hello world! I'm here!";
+            string actual = RemoveExtraBlanks.RemoveExtraBlanks.ReadText("testInput.txt", new UTF8Encoding(false));
+            Assert.AreEqual(expected, actual, "Text was read incorrectly");
         }
         [TestMethod]
-        public void GetStringWithoutExtraTabs_ShouldGoNext()
+        public void WriteText_ShouldGoNext()
         {
-            string line = "hello\t\tworld!\t\t\t\t\t\thow\t\t\t\t\t\t\t\tare\t\t\t\t\t\t\t\t\tu?";
-            string expected = "hello\tworld!\thow\tare\tu?";
-            string actual = RemoveExtraBlanks.RemoveExtraBlanks.GetStringWithoutExtraTabs(line);
-            Assert.AreEqual(expected, actual, "Tabs removed incorrectly");
+            string expected = "Hello world! I'm here!";
+            string text = "Hello world! I'm here!";
+            RemoveExtraBlanks.RemoveExtraBlanks.WriteText("testOutput.txt", new UTF8Encoding(false), text);
+            string actual = RemoveExtraBlanks.RemoveExtraBlanks.ReadText("testOutput.txt", new UTF8Encoding(false));
+            Assert.AreEqual(expected, actual, "Text was written incorrectly");
         }
     }
 }
