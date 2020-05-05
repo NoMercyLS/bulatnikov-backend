@@ -1,0 +1,5 @@
+﻿hello привет
+goodbye пока
+cat кошка
+dog собака
+whale кит
