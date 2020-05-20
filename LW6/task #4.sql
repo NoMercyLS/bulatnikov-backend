@@ -18,20 +18,20 @@ CREATE TABLE course_student (
 
 INSERT INTO student(name)
 VALUES
-	('¬ас€'),
-	('¬ан€'),
-	('√ена'),
-	('ѕет€'),
-	('∆ен€'),
-	(' ирилл'),
-	('Ћера'),
-	('¬ика'),
-	('ƒима');
+	('В†бп'),
+	('В†≠п'),
+	('Г•≠†'),
+	('П•вп'),
+	('Ж•≠п'),
+	('К®а®ЂЂ'),
+	('Л•а†'),
+	('В®™†'),
+	('Д®ђ†');
 	
 INSERT INTO course(name)
 VALUES
-	('‘изика'),
-	('ќќѕ');
+	('Ф®І®™†'),
+	('ООП');
 
 INSERT INTO course_student(id_course, id_student)
 VALUES
