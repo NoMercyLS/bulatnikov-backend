@@ -1,4 +1,4 @@
-CREATE TABLE student (
+ÔªøCREATE TABLE student (
 	id_student INTEGER PRIMARY KEY AUTOINCREMENT,
 	name TEXT NOT NULL
 );
@@ -18,20 +18,20 @@ CREATE TABLE course_student (
 
 INSERT INTO student(name)
 VALUES
-	('Ç†·Ô'),
-	('Ç†≠Ô'),
-	('É•≠†'),
-	('è•‚Ô'),
-	('Ü•≠Ô'),
-	('ä®‡®´´'),
-	('ã•‡†'),
-	('Ç®™†'),
-	('Ñ®¨†');
+	('–í–∞—Å—è'),
+	('–í–∞–Ω—è'),
+	('–ì–µ–Ω–∞'),
+	('–ü–µ—Ç—è'),
+	('–ñ–µ–Ω—è'),
+	('–ö–∏—Ä–∏–ª–ª'),
+	('–õ–µ—Ä–∞'),
+	('–í–∏–∫–∞'),
+	('–î–∏–º–∞');
 	
 INSERT INTO course(name)
 VALUES
-	('î®ß®™†'),
-	('ééè');
+	('–§–∏–∑–∏–∫–∞'),
+	('–û–û–ü');
 
 INSERT INTO course_student(id_course, id_student)
 VALUES

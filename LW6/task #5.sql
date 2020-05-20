@@ -1,4 +1,4 @@
--- Ответ: может, если нет NOT NULL
+я╗┐-- ╨Ю╤В╨▓╨╡╤В: ╨╝╨╛╨╢╨╡╤В, ╨╡╤Б╨╗╨╕ ╨╜╨╡╤В NOT NULL
 CREATE TABLE hairstyle(
 	id_hairstlye INTEGER PRIMARY KEY AUTOINCREMENT,
 	name TEXT NOT NULL
@@ -12,10 +12,10 @@ CREATE TABLE h_order(
 
 INSERT INTO hairstyle(name)
 VALUES
-	('Канадка'),
-	('Модельная'),
-	('Шапочка'),
-	('Налысо');
+	('╨Ъ╨░╨╜╨░╨┤╨║╨░'),
+	('╨Ь╨╛╨┤╨╡╨╗╤М╨╜╨░╤П'),
+	('╨и╨░╨┐╨╛╤З╨║╨░'),
+	('╨Э╨░╨╗╤Л╤Б╨╛');
 	          
 INSERT INTO h_order(id_hairstyle)
 VALUES 
