@@ -1,4 +1,4 @@
-SELECT 
+﻿SELECT 
 	download_count, 
 	COUNT(*) AS user_count 
 FROM ( 
