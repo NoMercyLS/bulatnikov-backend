@@ -1,4 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+Ôªøusing Microsoft.VisualStudio.TestTools.UnitTesting;
 using Translator;
 
 namespace TranslatorTests
@@ -17,14 +17,14 @@ namespace TranslatorTests
         [TestMethod]
         public void UnknownRuWord_ShouldReturnNull()
         {
-            string word = " ÛËˆ‡";
+            string word = "–ö—É—Ä–∏—Ü–∞";
             string result = dictionary.GetTranslation(word);
             Assert.AreEqual(null, result);
         }
         [TestMethod]
         public void RuWord_ShouldReturnTranslation()
         {
-            string word = "ÍËÚ";
+            string word = "–∫–∏—Ç";
             string result = dictionary.GetTranslation(word);
             Assert.AreEqual("whale", result);
         }
@@ -33,7 +33,7 @@ namespace TranslatorTests
         {
             string word = "whale";
             string result = dictionary.GetTranslation(word);
-            Assert.AreEqual("ÍËÚ", result);
+            Assert.AreEqual("–∫–∏—Ç", result);
         }      
         [TestMethod]
         public void EmptyWord_ShouldReturnNull()
